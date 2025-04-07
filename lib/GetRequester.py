@@ -1,13 +1,14 @@
+# lib/GetRequester.py
 import requests
-import json
 
 class GetRequester:
-
     def __init__(self, url):
         self.url = url
 
     def get_response_body(self):
-        pass
+        # Return the raw bytes to match the test's expectation
+        return requests.get(self.url).content
 
     def load_json(self):
-        pass
+        # Decode and convert JSON data into Python objects
+        return requests.get(self.url).json()
